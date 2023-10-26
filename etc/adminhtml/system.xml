@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * It is available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to sales@goivvy.com so we can send you a copy immediately.
+ *
+ * @component  Goivvyllc_CacheWarmer
+ * @copyright  Copyright (c) 2023 GOIVVY LLC (https://www.goivvy.com)
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ * @author     Goivvy.com <sales@goivvy.com>
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+ <system> 
+  <tab id="goivvyllc" translate="label" sortOrder="200">
+     <label>Goivvy LLC</label>
+  </tab>
+  <section id="gcachewarmer" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1"> 
+   <class>separator-top</class>
+   <label>Simple Cache Warmer</label>
+   <tab>goivvyllc</tab>
+   <resource>Goivvyllc_CacheWarmer::config</resource>
+   <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+    <label>General</label>
+    <field id="enable" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+      <label>Enable Cache Warmer</label>
+      <comment>
+           <![CDATA[Turn on the Simple Cache Warmer. It will warm all active CMS, product and category pages with a choosen frequency (every 1 hour or 2,6,12 or 24 hours). If you need more functionality - contact a <a href="https://www.goivvy.com">developer</a>.]]>           
+      </comment>
+      <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+    </field> 
+    <field id="frq" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+       <label>Warming Frequency (every X hours)</label>
+       <comment>
+          <![CDATA[Warmer will warm pages every X hours. Don't choose 'every 1 hour' if your site has more than 1k active SKUs, warmer won't be able to finish on time.]]> 
+       </comment>   
+       <source_model>Goivvyllc\CacheWarmer\Model\Config\Source\Frequency</source_model>
+    </field>
+   </group>
+  </section>
+ </system>
+</config>

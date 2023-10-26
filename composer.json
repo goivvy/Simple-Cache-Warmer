@@ -1,0 +1,27 @@
+{
+    "name": "goivvyllc/cachewarmer",
+    "description": "Simple Cache Warmer",
+    "type": "magento2-module",
+    "version": "0.0.1",
+    "require":{
+          "php":">=7.0.2"
+    },
+    "license": [
+        "OSL-3.0"
+    ],
+    "authors": [
+    {
+      "name": "GOIVVY LLC",
+      "email": "sales@goivvy.com",
+      "homepage": "https://www.goivvy.com"
+    }
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Goivvyllc\\CacheWarmer\\": ""
+        }
+    }
+}

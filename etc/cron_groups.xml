@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * It is available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to sales@goivvy.com so we can send you a copy immediately.
+ *
+ * @component  Goivvyllc_CacheWarmer
+ * @copyright  Copyright (c) 2023 GOIVVY LLC (https://www.goivvy.com)
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ * @author     Goivvy.com <sales@goivvy.com>
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/cron_groups.xsd">
+    <group id="goivvywarmer">
+        <schedule_generate_every>1</schedule_generate_every>
+        <schedule_ahead_for>15</schedule_ahead_for>
+        <schedule_lifetime>3</schedule_lifetime>
+        <history_cleanup_every>1450</history_cleanup_every>
+        <history_success_lifetime>1450</history_success_lifetime>
+        <history_failure_lifetime>4320</history_failure_lifetime>
+        <use_separate_process>1</use_separate_process>
+    </group>
+</config>
